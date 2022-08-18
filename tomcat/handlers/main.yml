@@ -1,0 +1,22 @@
+---
+  - name: Start and enable Tomcat service
+    systemd:
+      name: tomcat
+      state: started
+      enabled: true
+      daemon_reload: true
+
+      
+  - name: stop apache2 service
+    systemd:
+      name: apache2
+      state: restarted
+      enabled: true
+      daemon_reload: true
+
+  - name: Start  Tomcat service
+    systemd:
+      name: tomcat
+      state: started
+      enabled: true
+      daemon_reload: true
